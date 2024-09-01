@@ -1,0 +1,17 @@
+{
+  "name": "khane-me-kya-banega",
+  "version": "1.0.0",
+  "description": "A simple node application to answer the most tough question \"Ajj Khane me kya bangea?\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "jenish jain",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "googleapis": "^142.0.0"
+  }
+}

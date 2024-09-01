@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="page-title">Menu of the Day</h1>
+        
+        <div class="toggle-container">
+            <div class="toggle">
+                <input type="radio" id="menu-of-the-day" name="toggle" checked>
+                <label for="menu-of-the-day" id="menu-of-the-day-label">Menu of the Day</label>
+                <input type="radio" id="available-menu" name="toggle">
+                <label for="available-menu" id="available-menu-label">Available Menu</label>
+                <div class="slider"></div>
+            </div>
+        </div>
+        
+        <div id="breakfast-section">
+            <h2>Breakfast</h2>
+            <ul id="breakfast-list">
+                <!-- Breakfast items will be inserted here by JavaScript -->
+            </ul>
+        </div>
+        
+        <div id="lunch-section">
+            <h2>Lunch</h2>
+            <ul id="lunch-list">
+                <!-- Lunch items will be inserted here by JavaScript -->
+            </ul>
+        </div>
+        
+        <div id="dinner-section">
+            <h2>Dinner</h2>
+            <ul id="dinner-list">
+                <!-- Dinner items will be inserted here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>created by a lazy prompter and GitHub Copilot</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
