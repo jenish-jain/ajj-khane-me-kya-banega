@@ -1,7 +1,7 @@
-const express = require('express');
-const { google } = require('googleapis');
-const fs = require('fs');
 const path = require('path');
+const express = require('express');
+// const fs = require('fs');
+const { google } = require('googleapis');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,24 +11,26 @@ let menuData = {
   lunch: [],
   dinner: []
 };
-
-const CREDENTIALS_PATH = path.join(__dirname, 'service-account.json'); // Replace with your service account JSON file path
 const SPREADSHEET_ID = '1bc_B31pGkYH4KRniMKwTOWr6OSPGxE6OMRjcoOfQlD8'; // Replace with your actual spreadsheet ID
-
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 
-// Load client secrets from a local file.
-fs.readFile(CREDENTIALS_PATH, (err, content) => {
-  if (err) return console.error('Error loading service account key file:', err);
-  authorize(JSON.parse(content), listMajors);
-});
+// Load client secrets from environment variables.
+const client_email = process.env.CLIENT_EMAIL;
+const private_key = Buffer.from(process.env.PRIVATE_KEY , 'base64').toString('ascii');
+
+if (!client_email || !private_key) {
+  console.error('Error: CLIENT_EMAIL and PRIVATE_KEY environment variables are required.');
+  process.exit(1);
+ }
+
+authorize({ client_email, private_key }, listMajors);
 
 function authorize(credentials, callback) {
   const { client_email, private_key } = credentials;
   const auth = new google.auth.GoogleAuth({
     credentials: {
-      client_email: process.env.CLIENT_EMAIL || client_email,
-      private_key: process.env.PRIVATE_KEY || private_key,
+      client_email,
+      private_key,
     },
     scopes: SCOPES,
   });
