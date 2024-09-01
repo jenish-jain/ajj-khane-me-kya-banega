@@ -27,8 +27,8 @@ function authorize(credentials, callback) {
   const { client_email, private_key } = credentials;
   const auth = new google.auth.GoogleAuth({
     credentials: {
-      client_email: client_email,
-      private_key: private_key,
+      client_email: process.env.CLIENT_EMAIL || client_email,
+      private_key: process.env.PRIVATE_KEY || private_key,
     },
     scopes: SCOPES,
   });
