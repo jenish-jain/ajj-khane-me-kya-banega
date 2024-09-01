@@ -16,8 +16,8 @@ module.exports = {
   mode: 'production',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.CLIENT_EMAIL': JSON.stringify(process.env.CLIENT_EMAIL),
-      'process.env.PRIVATE_KEY': JSON.stringify(process.env.PRIVATE_KEY)
+      'process.env.CLIENT_EMAIL': process.env.CLIENT_EMAIL,
+      'process.env.PRIVATE_KEY': process.env.PRIVATE_KEY
     }),
     new CopyWebpackPlugin({
       patterns: [
