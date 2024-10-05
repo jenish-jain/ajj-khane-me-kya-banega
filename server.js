@@ -14,6 +14,9 @@ let menuData = {
 const SPREADSHEET_ID = '1bc_B31pGkYH4KRniMKwTOWr6OSPGxE6OMRjcoOfQlD8'; // Replace with your actual spreadsheet ID
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 
+console.log('CLIENT_EMAIL:', process.env.CLIENT_EMAIL);
+console.log('PRIVATE_KEY:', process.env.PRIVATE_KEY);
+
 // Load client secrets from environment variables.
 const client_email = process.env.CLIENT_EMAIL;
 const private_key = Buffer.from(process.env.PRIVATE_KEY , 'base64').toString('ascii');
