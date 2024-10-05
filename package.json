@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "build": "webpack"
+    "start": "node server.js"
   },
   "author": "jenish jain",
   "license": "ISC",
@@ -14,10 +13,5 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "googleapis": "^142.0.0"
-  },
-  "devDependencies": {
-    "copy-webpack-plugin": "^12.0.2",
-    "webpack": "^5.94.0",
-    "webpack-cli": "^4.10.0"
   }
 }
