@@ -49,9 +49,9 @@ function listMajors(auth) {
   const sheets = google.sheets({ version: 'v4', auth });
 
   const ranges = {
-    breakfast: 'Breakfast!A1:A17', // Replace with your actual range for breakfast
-    lunch: ['Dals!A1:A17', 'Sabzis!A1:A17'], // Replace with your actual ranges for lunch
-    dinner: ['Dals!A1:A17', 'Sabzis!A1:A17', 'Specials!A1:A17', 'Pulaos!A1:A17'] // Replace with your actual ranges for dinner
+    breakfast: 'Breakfast!A2:A27', // Replace with your actual range for breakfast
+    lunch: ['Dals!A2:A27', 'Sabzis!A2:A27'], // Replace with your actual ranges for lunch
+    dinner: ['Dals!A2:A27', 'Sabzis!A2:A27', 'Specials!A2:A27', 'Pulaos!A2:A17'] // Replace with your actual ranges for dinner
   };
 
   // Fetch breakfast data
