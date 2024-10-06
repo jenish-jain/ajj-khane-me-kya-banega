@@ -116,17 +116,24 @@ function listMajors(auth) {
   });
 }
 
+function getDailyRecommendation(items) {
+  const today = new Date();
+  const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+  const pseudoRandom = Math.sin(seed) * 10000;
+  const index = Math.floor(Math.abs(pseudoRandom) % items.length);
+  return items[index];
+}
+
 app.get('/menu', (req, res) => {
   res.json(menuData);
 });
 
 app.get('/menu-of-the-day', (req, res) => {
-  const getRandomItem = (items) => items[Math.floor(Math.random() * items.length)];
 
   const menuOfTheDay = {
-    breakfast: getRandomItem(menuData.breakfast),
-    lunch: getRandomItem(menuData.lunch),
-    dinner: getRandomItem(menuData.dinner)
+    breakfast: getDailyRecommendation(menuData.breakfast),
+    lunch: getDailyRecommendation(menuData.lunch),
+    dinner: getDailyRecommendation(menuData.dinner)
   };
 
   res.json(menuOfTheDay);
